@@ -3,7 +3,7 @@
 
 #include <string>
 
-struct{
+struct Task{
     int id;                 //Identifier of task
     std::string desc;       //description of task
     bool completed;         //Status flag
