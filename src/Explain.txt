@@ -1,0 +1,20 @@
+This Code is highly operated on the principle of Object Oriented Programming with C++. 
+
+The timeline of the code start by first creating user defined library "Task.h" and "TodoManager.h". The main purpose of creating special libraries is to create clean and reusable code.
+
+"Task.h": A user-defined library containing "Struct"(a user-defined data-type that can hold mulitple related datatypes variables.). This Struct include "Struct Task"(id, description, priority, category,dueDate).
+
+"TodoManager.h": A user-defined library containing class known as "TodoManager".
+        TodoManager includes: 1. Under Private section
+                                    -a vector of tasks, such as vector<Task>(as previously we had created a struct data type specially for this).
+                                    -The string filename to store and reflect tasks.
+                                    -nextId of the task(later discussed)
+                                    -a savetoFile() function(later declared)
+                                    -a loadFromFile() function(later delcared)
+                              2. Under Public section
+                                    -a constructor of TodoManager(taking string file as attribute)
+                                    -a function to addtask
+                                    -a function to listTask
+                                    -a function to MarkTaskasCompleted
+                                    -a function to deleteTask()
+                                    -a function to editTask()

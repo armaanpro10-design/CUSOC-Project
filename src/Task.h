@@ -1,5 +1,5 @@
-#ifndef TASK_H
-#define TASK_H
+#ifndef TASK_H 
+#define TASK_H //Macro
 
 #include <string>
 
