@@ -49,3 +49,35 @@ void TodoManager::saveToFile(){
 
     file.close();
 }
+
+void TodoManager::addTask(std::string desc, std::string prio, std::string cat, std::string due){
+
+    Task newTask;
+    newTask.id = nextId++;
+    newTask.desc = desc;
+    newTask.completed = false;
+    newTask.priority = prio;
+    newTask.category = cat;
+    newTask.dueDate = due;
+
+    tasks.push_back(newTask);
+    saveToFile();
+    std::cout << "Task added successfully with ID: " << newTask.id << "\n";
+}
+
+void TodoManager::listTasks(){
+    if(tasks.empty()){
+        std::cout << "No tasks available.\n";
+        return;
+    }
+
+    std::cout << std::left << std::setw(5) << "ID" << std::setw(10) << "Status" << std::setw(15) << "Priority" << std::setw(15) << "category" << std::setw(15) << "Due Date" << "Description\n";
+
+    std::cout << std::string(80, '-') << "\n";
+
+    for(const auto& t : tasks){
+        std::string status = t.completed ? "[Done]" : "[]";
+
+        std::cout << std::left << std::setw(5) << t.id << std::setw(10) << status << std::setw(15) << t.priority << std::setw(15) << t.category << std::setw(15) << t.dueDate << t.desc << "\n"; 
+    }
+}
