@@ -81,3 +81,44 @@ void TodoManager::listTasks(){
         std::cout << std::left << std::setw(5) << t.id << std::setw(10) << status << std::setw(15) << t.priority << std::setw(15) << t.category << std::setw(15) << t.dueDate << t.desc << "\n"; 
     }
 }
+
+void TodoManager::markCompleted(int id){
+
+    for(auto& t : tasks){
+        if(t.id == id){
+            t.completed = true;
+            saveToFile();
+            std::cout << "Task " << id << " marked as completed.\n";
+            return;
+        }
+    }
+    std::cout << "Task ID not found.\n";
+}
+
+void TodoManager::deleteTask(int id){
+    for(auto it = tasks.begin(); it != tasks.end(); ++it){
+        if(it->id == id){
+            tasks.erase(it);
+            saveToFile();
+            std::cout << "Task " << id << " deleted.\n";
+            return;
+        }
+    }
+    std::cout << "Task ID not found.\n";
+}
+
+void TodoManager::editTask(int id, std::string newDesc, std::string newPrio, std::string newCat, std::string newDue){
+
+    for(auto& t : tasks){
+        if(t.id == id){
+            t.desc = newDesc;
+            t.priority = newPrio;
+            t.category = newCat;
+            t.dueDate = newDue;
+            saveToFile();
+            std::cout << "Task " << id << " updated.\n";
+            return;
+        }
+    }
+    std::cout << "Task ID not found.\n";
+}
