@@ -44,5 +44,32 @@ int main(){
 
             manager.addTask(desc, prio, cat, due);
         }
+        else if (choice == 2) { 
+            std::cout << "\n";
+            manager.listTasks(); 
+            
+        } 
+        else if (choice == 3) { 
+            std::cout << "Enter Task ID to mark completed: ";
+            int id = getinput(); 
+            manager.markCompleted(id); 
+            
+        } 
+        else if (choice == 4) { 
+            std::cout << "Enter Task ID to edit: ";
+            int id = getinput(); 
+            
+            std::string desc, prio, cat, due;
+            std::cout << "New Description: ";
+            std::getline(std::cin, desc);
+            std::cout << "New Priority (High/Medium/Low): ";
+            std::getline(std::cin, prio);
+            std::cout << "New Category (Work/Personal/Study): ";
+            std::getline(std::cin, cat);
+            std::cout << "New Due Date (YYYY-MM-DD): ";
+            std::getline(std::cin, due);
+            
+            manager.editTask(id, desc, prio, cat, due); 
+        }
     }
 }
