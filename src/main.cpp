@@ -71,5 +71,19 @@ int main(){
             
             manager.editTask(id, desc, prio, cat, due); 
         }
+        else if (choice == 5) { // Delete Task
+            std::cout << "Enter Task ID to delete: ";
+            int id = getinput(); 
+            manager.deleteTask(id); 
+            
+        }
+        else if (choice == 6) { // Exit
+            std::cout << "Exiting... Goodbye!\n";
+            break; 
+            
+        }
+        else { // Invalid input
+            std::cout << "Invalid choice. Please try again.\n";
+        }
     }
 }
