@@ -23,4 +23,4 @@ This project uses standard file streams for persistent storage and requires no e
 │   ├── Task.h              # Task data structure
 │   ├── TodoManager.h       # Manager class declaration
 │   └── TodoManager.cpp     # Logic and File I/O implementation
-             //
+             //   /////////
